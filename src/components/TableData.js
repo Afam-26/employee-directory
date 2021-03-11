@@ -1,10 +1,11 @@
 import React from "react";
 
+
 function TableData(props) {
     return(
         <table className="table table-striped rounded" >
             <thead>
-                <tr>
+                <tr style={{color: "black", fontFamily: "sans-serif", fontWeight: "bolder", fontSize: "2rem"}}>
                     <th scope="col">Picture</th>
                     <th scope="col">First</th>
                     <th scope="col">Last</th>
@@ -12,11 +13,12 @@ function TableData(props) {
                     <th scope="col">Gender</th>
                 </tr>
             </thead>
+   
             <tbody>
                 {props.list.map((e)=>{
                     return(
                     <>
-                        <tr key= {e.email}>
+                        <tr key= {e.email} style={{color: "black", fontFamily: "Lucida Console", fontWeight: "bolder", fontSize: "1.5rem"}}>
                             <td><img src={e.picture.thumbnail} alt="employee"/> </td>                          
                             <td>{e.name.first}</td>
                             <td>{e.name.last}</td>

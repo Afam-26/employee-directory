@@ -8,3 +8,12 @@ html, body, #root {
   margin: 0;
   height: 100%;
 }
+
+body {
+  background-image: url("./assets/pexels-henry-&-co-1939485.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
