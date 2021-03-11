@@ -1,23 +1,40 @@
-import React, { useState }  from "react";
+import React, { useState, useEffect }  from "react";
+import axios from "axios"
 
-function SearchBar() {
-    const [employee, setEmployee] = useState();
+function SearchBar(props) {
+    // Variable declaration
     
-    const searchBtn = e => {
-        e.preventDefault();
-    };   
+    const [result, setResult] = useState();
+    
+    // const searchBtn = e => {
+    //     e.preventDefault();        
+    // };
+
+    // const EmpFilter = employee.filter((event)=>{
+    //     if(event.First ==
+
+    // })
+
+  
+
+    const handleInputChange = event => {
+        event.preventDefault();
+        setResult(event.target.value);
+    };
 
     return(
-        <form className="align-middle" >
-            <div className="form-control">
+        <form className="container" onClick>
+            <div >
                 <input 
-                    onChange ={searchBtn}
+                    onChange ={e => setResult(e.target.value)}
+                    value={props.search}
                     type="text"
                     placeholder="Search by name"
-                    name="search"
-                    size="40"        
+                    name="employee"
+                    size="40" 
+                          
                 />
-                <button class="btn btn-primary" type="submit">Click here</button>
+                <button onClick={handleInputChange} class="btn btn-primary " type="submit">Click here</button>
             </div>
 
         </form>
