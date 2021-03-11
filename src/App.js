@@ -6,7 +6,23 @@ import axios from "axios";
 
 
 function App () {
-  const [employees, setEmployees] = useState([]);
+  // Variable declaration
+  const [employees, setEmployees] = useState([]); 
+
+  const [searchResult, setSearchResult] = useState("");
+
+  const searchedEmployees = employees.filter((e) => {
+
+    if (e.name.first.toLowerCase().includes(searchResult.toLowerCase())) {
+      return true;
+    }
+    else if (e.name.last.toLowerCase().includes(searchResult.toLowerCase())) {
+      return true;
+    }
+    else{
+      return false
+    }    
+  })
 
   useEffect(() => {      
     // API request for a user with a given ID  
@@ -26,8 +42,8 @@ function App () {
     <div className="App">
       
       <Header />
-      <SearchBar />
-      <TableData list={employees}/>
+      <SearchBar list={setSearchResult}  />      
+      <TableData list={searchedEmployees} />
       
     </div>  
   );
@@ -36,3 +52,7 @@ function App () {
 }
 
 export default App;
+
+
+// setSearchResult={setSearchResult}  
+// searchedEmployees={searchedEmployees}

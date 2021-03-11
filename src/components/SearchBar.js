@@ -1,40 +1,53 @@
-import React, { useState, useEffect }  from "react";
-import axios from "axios"
+import React  from "react";
+
 
 function SearchBar(props) {
-    // Variable declaration
+//     // Variable declaration
     
-    const [result, setResult] = useState();
+//     const [searchResult, setSearchResult] = useState("");
     
-    // const searchBtn = e => {
-    //     e.preventDefault();        
-    // };
+//    const searchedEmployees = props.employees((e) => {
 
-    // const EmpFilter = employee.filter((event)=>{
-    //     if(event.First ==
+//         if(e.name.first.toLowerCase().includes(searchResult.toLowerCase())) {
+//             return true;
+//         }
+//         else if(e.name.last.toLowerCase().includes(searchResult.toLowerCase())) {
+//             return true;
+//         }
 
-    // })
+
+
+//         e.preventDefault();
+//        const filteredList = props.list.filter(person => {
+//            console.log(person)
+//            return []
+//        })
+//        console.log(filteredList)
+//        props.updated(filteredList)
+//    })
+
+    
 
   
 
     const handleInputChange = event => {
-        event.preventDefault();
-        setResult(event.target.value);
+        
+        props.setSearchResult(event.target.value);
     };
 
     return(
         <form className="container" onClick>
             <div >
                 <input 
-                    onChange ={e => setResult(e.target.value)}
-                    value={props.search}
+                    onChange ={handleInputChange}
+                    value={props.searchResult}
                     type="text"
                     placeholder="Search by name"
                     name="employee"
                     size="40" 
                           
                 />
-                <button onClick={handleInputChange} class="btn btn-primary " type="submit">Click here</button>
+                <button onClick={(e) => props.setSearchResult(e.target.value)} className="btn btn-primary" >Click here</button>
             </div>
 
         </form>
