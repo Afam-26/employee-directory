@@ -11,6 +11,7 @@ function App () {
 
   const [searchResult, setSearchResult] = useState("");
 
+  // Filter search function
   const searchedEmployees = employees.filter((e) => {
 
     if (e.name.first.toLowerCase().includes(searchResult.toLowerCase())) {
@@ -38,11 +39,17 @@ function App () {
 
  }, []);
 
+ const onSearchChange = e => {
+  e.preventDefault();
+   setSearchResult(e.target.value)
+   console.log(e.target.value)
+ }
+
   return(
     <div className="App">
       
       <Header />
-      <SearchBar list={setSearchResult}  />      
+      <SearchBar onSearchChange={onSearchChange}  />      
       <TableData list={searchedEmployees} />
       
     </div>  

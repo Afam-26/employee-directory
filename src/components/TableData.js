@@ -5,7 +5,7 @@ function TableData(props) {
     return(
         <table className="table table-striped rounded" >
             <thead>
-                <tr style={{color: "black", fontFamily: "sans-serif", fontWeight: "bolder", fontSize: "2rem"}}>
+                <tr style={{color: "black", fontFamily: "Lucida Console", fontWeight: "bolder", fontSize: "2rem"}}>
                     <th scope="col">Picture</th>
                     <th scope="col">First</th>
                     <th scope="col">Last</th>
@@ -18,7 +18,7 @@ function TableData(props) {
                 {props.list.map((e)=>{
                     return(
                     <>
-                        <tr key= {e.email} style={{color: "black", fontFamily: "Lucida Console", fontWeight: "bolder", fontSize: "1.5rem"}}>
+                        <tr key= {e.email} style={{color: "black", fontFamily: "Lucida Console",  fontSize: "1.5rem"}}>
                             <td><img src={e.picture.thumbnail} alt="employee"/> </td>                          
                             <td>{e.name.first}</td>
                             <td>{e.name.last}</td>
