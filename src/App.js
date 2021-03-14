@@ -61,5 +61,3 @@ function App () {
 export default App;
 
 
-// setSearchResult={setSearchResult}  
-// searchedEmployees={searchedEmployees}

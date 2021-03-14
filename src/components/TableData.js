@@ -16,18 +16,15 @@ function TableData(props) {
    
             <tbody>
                 {props.list.map((e)=>{
-                    return(
-                    <>
-                        <tr key= {e.email} style={{color: "black", fontFamily: "Lucida Console",  fontSize: "1.5rem"}}>
-                            <td><img src={e.picture.thumbnail} alt="employee"/> </td>                          
+                    return(                  
+                        <tr key={e.email} style={{ color: "black", fontFamily: "Lucida Console", fontSize: "1.5rem" }}>
+                            <td><img src={e.picture.thumbnail} alt="employee" /> </td>
                             <td>{e.name.first}</td>
                             <td>{e.name.last}</td>
                             <td>{e.email}</td>
                             <td>{e.gender}</td>
-                        </tr>
-                     
-                    </>
-                    
+                        </tr>             
+                                      
                 )})}
                 
             </tbody>

@@ -15,8 +15,8 @@ function SearchBar(props) {
                     size="40" 
                           
                 />
-                {/* <button onClick={(e) => props.setSearchResult(e.target.value)} className="btn btn-dark" >Click here</button> */}
-                <button onClick={props.onSearchChange} className="btn btn-dark" >Click here</button>
+                <button onClick={(e) => props.onSearchChange(e.target.value)} ></button>
+                {/* <button onClick={props.onSearchChange} className="btn btn-dark" >Click here</button> */}
             </div>
 
         </form>
