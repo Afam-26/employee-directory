@@ -45,12 +45,24 @@ function App () {
    console.log(e.target.value)
  }
 
+ const sortList = (name) => {
+
+  let sorted = employees.sort((a, b) => {
+    console.log(" a" ,a)
+    console.log(" b" ,b)
+    console.log( "a.name.last.localeCompare(b.name.last)", a["name"].last.localeCompare(b["name"].last))
+    return a.name.last.localeCompare(b.name.last);
+  });
+  setEmployees(sorted);
+  console.log(sorted)
+ }
+
   return(
     <div className="App">
       
       <Header />
       <SearchBar onSearchChange={onSearchChange}  />      
-      <TableData list={searchedEmployees} />
+      <TableData list={searchedEmployees} sortList={sortList} />
       
     </div>  
   );
