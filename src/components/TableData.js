@@ -8,7 +8,7 @@ function TableData(props) {
                 <tr style={{color: "black", fontFamily: "Lucida Console", fontWeight: "bolder", fontSize: "2rem"}}>
                     <th scope="col">Picture</th>
                     <th scope="col">First</th>
-                    <th scope="col" className="sort" onClick={() => props.sortList("last")}>Last ⬇️</th>
+                    <th scope="col" className="sort" onClick={(e) => props.sortByLastName(e)}>Last ⬇️</th>
                     <th scope="col">Email</th>
                     <th scope="col">Gender</th>
                 </tr>
